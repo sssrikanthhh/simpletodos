@@ -3,20 +3,20 @@ const TodoItem = ({ todo, handleStatus }) => {
 		<div className='todo'>
 			<h3
 				style={{
-					textDecoration: `${!todo.status ? 'line-through' : 'none'}`,
+					textDecoration: `${todo.status ? 'line-through' : 'none'}`,
 				}}
 			>
 				•{todo.text}
 			</h3>
 			<p
 				style={{
-					color: `${!todo.status ? 'green' : 'red'}`,
+					color: `${todo.status ? 'green' : 'red'}`,
 				}}
 			>
-				{!todo.status ? 'Done ✓' : 'Pending ✕'}
+				{todo.status ? 'Done ✓' : 'Pending ✕'}
 			</p>
 			<button onClick={() => handleStatus(todo.id)}>
-				{todo.status ? 'Mark as completed' : 'remove from completed'}
+				{!todo.status ? 'Mark as completed' : 'remove from completed'}
 			</button>
 		</div>
 	);
